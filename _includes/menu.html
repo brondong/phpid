@@ -68,6 +68,16 @@
           </a>
         </li>
 
+        {% if page.uri == 'komentar-php' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="{{ site.baseurl }}/syntax-dasar/komentar-php">
+            <span class="glyphicon glyphicon-ok"></span> Komentar PHP
+          </a>
+        </li>
+
       </ul>
       <!-- /.nav-child -->
     <!-- /syntax dasar -->
