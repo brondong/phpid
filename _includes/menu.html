@@ -13,14 +13,22 @@
     </li>
 
       <!-- .nav-child -->
-      <ul class="nav nav-stacked nav-child collapse in" id="pengenalan">                
-        <li class="active">
+      <ul class="nav nav-stacked nav-child collapse in" id="pengenalan">
+        {% if page.uri == '/' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
           <a href="{{ site.baseurl }}/">
             <span class="glyphicon glyphicon-ok"></span> Apa Itu PHP?
           </a>
         </li>
 
-        <li>
+        {% if page.uri == 'fitur-php' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
           <a href="{{ site.baseurl }}/pengenalan/fitur-php">
             <span class="glyphicon glyphicon-ok"></span> Fitur PHP
           </a>
