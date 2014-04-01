@@ -1,0 +1,98 @@
+.navbar-php-id {
+  background-color: #428bca;
+  border-color: #e7e7e7;
+}
+.navbar-php-id span {
+  color: #fff;
+}
+#menu, #konten {
+  margin-bottom: 20px;
+}
+.nav-parent > li, 
+.nav-parent > li:hover,
+.nav-parent > li > a, 
+.nav-parent > li > a:hover {
+  color: #fff;
+  background-color: #428bca;
+}
+.nav-parent > li {
+  border-radius: 0px;
+}
+.nav-child > li {
+  border-left: 1px solid #428bca;
+  border-bottom: 1px solid #428bca;
+}
+.nav-child > li > a,
+.nav-child > li > a:hover {
+  color: #333;
+  text-decoration: none;
+}
+.nav-child > li:not(:first-child) > a {
+  margin-top: -2px;
+}
+.nav-child > li:hover,
+.nav-child > .active {
+  border-right: 3px solid #428bca;
+}
+.nav-child > li > a:hover {
+  background: #fff;
+}
+.pager > li > a {
+  border-color: #428bca;
+  color: #428bca;
+}
+.pager > li > a:hover {
+  background-color: #428bca;
+  color: #fff;
+}
+.panel-body > p {
+  text-align: justify;
+}
+strong {
+  background: #272822;
+  color: #fff;
+  padding: 2px;
+  font-weight: normal;
+}
+pre {
+  background: #272822;
+  color: #5bc0de;
+  font: normal 15px monospace, Verdana, Arial, serif;
+  border: 0;
+}
+pre.prettyprint {
+  border: 0;
+}
+.prettyprint ol {
+  color: #444;
+}
+.prettyprint ol li {
+  background: transparent;
+}
+.str,.atv {
+  color: #E6DB74;
+}
+.kwd {
+  color: #F92672;
+}
+.com {
+  color: #75715E;
+}
+.typ {
+  color: #A6E22E;
+}
+.lit {
+  color: #66D9EF;
+}
+.pun {
+  color: #999999;
+}
+.pln,.atn {
+  color: #A6E22E;
+}
+.tag,.src {
+  color: #F92672;
+}
+.dec {
+  color: #AE81FF;
+}
