@@ -6,3 +6,4 @@ host: 0.0.0.0
 port: 4040
 baseurl: /phpid
 url: http://localhost:4040
+permalink: pretty
