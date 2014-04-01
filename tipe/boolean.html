@@ -1,0 +1,101 @@
+---
+layout: master
+title: PHP Boolean - PHP Docs Indonesia
+keywords: php, php docs, dokumentasi php, php indonesia, boolean
+description: Mengenal tipe data boolean pada pemrograman PHP
+uri: boolean
+---
+
+<!-- konten -->
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8" id="konten">
+
+  <!-- .panel -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Boolean</h3>
+    </div>
+    
+    <!-- .panel-body -->
+    <div class="panel-body">
+      <p>Tipe boolean merupakan tipe data untuk menunjukan benar atau salah. Jika benar berarti bernilai <code>TRUE</code> dan jika salah berarti bernilai <code>FALSE</code>. Baik <code>true</code> maupun <code>false</code> keduanya <code>case-sensitive</code>, artinya mau ditulis dengan huruf kapital atau kecil akan tetap bernilai sama. Contoh :</p>
+
+{% highlight php %}
+<?php
+  $a = TRUE;
+  $b = True;
+  $c = true;
+
+  var_dump($a); // bool(true)
+  var_dump($b); // bool(true)
+  var_dump($c); // bool(true)
+?>
+{% endhighlight %}
+
+      <p>Selain dengan langsung memberikan nilai boolean seperti contoh di atas, kita juga dapat mengkonversi nilai yang sudah ada menjadi boolean.</p>
+
+      <p>Perlu dipahami, setiap mengkonversi ke boolean, nilai-nilai di bawah ini akan dianggap <code>FALSE</code> :</p>
+
+      <ol>
+        <li><code>Boolean</code> yang memang bernilai <code>FALSE</code>.</li>
+        <li><code>Integer</code> yang bernilai <code>0</code>.</li>
+        <li><code>Float</code> yang bernilai <code>0.0</code>.</li>
+        <li><code>String</code> yang <code>kosong</code> dan <code>string</code> yang bernilai <code>'0'</code>.</li>
+        <li><code>Array</code> yang <code>kosong</code> (tanpa elemen).</li>
+        <li>Tipe yang bernilai <code>NULL</code>.</li>
+        <li>Object <code>SimpleXML</code> yang dibuat dari tag <code>kosong</code>.</li>
+      </ol>
+
+      <p>Selain yang disebutkan di atas akan bernilai <code>TRUE</code>. Contoh :</p>
+
+{% highlight php %}
+<?php
+$a = true;
+$b = false;
+$c = 1;
+$d = 0;
+$e = -1;
+$f = 0.1;
+$g = 0.0;
+$h = -0.1;
+$i = 'abc';
+$j = '';
+$k = '0';
+$l = array(1, 2, 3);
+$m = array();
+$n = null;
+
+var_dump( (bool) $a ); // bool(true)
+var_dump( (bool) $b ); // bool(false)
+var_dump( (bool) $c ); // bool(true)
+var_dump( (bool) $d ); // bool(false)
+var_dump( (bool) $e ); // bool(true)
+var_dump( (bool) $f ); // bool(true)
+var_dump( (bool) $g ); // bool(false)
+var_dump( (bool) $h ); // bool(true)
+var_dump( (bool) $i ); // bool(true)
+var_dump( (bool) $j ); // bool(false)
+var_dump( (bool) $k ); // bool(false)
+var_dump( (bool) $l ); // bool(true)
+var_dump( (bool) $m ); // bool(false)
+var_dump( (bool) $n ); // bool(false)
+?> 
+{% endhighlight %}
+
+      <blockquote>
+        <p>-1 akan bernilai <code>TRUE</code> seperti angka yang tidak bernilai <code>0</code> lainnya, baik <code>positif</code> maupun <code>negatif</code>.</p>
+      </blockquote>
+
+      <!-- .pager -->
+      <ul class="pager">
+        <li class="previous"><a href="{{ site.baseurl }}/syntax-dasar/komentar-php">&larr; Komentar PHP</a></li>
+        <!-- <li class="next"><a href="php-dan-html.html">PHP & HTML &rarr;</a></li> -->
+      </ul>
+      <!-- /.pager -->
+
+    </div>
+    <!-- /.panel-body -->
+  </div>
+  <!-- /.panel -->
+
+</div>
+<!-- /konten -->
