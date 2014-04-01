@@ -82,6 +82,30 @@
       <!-- /.nav-child -->
     <!-- /syntax dasar -->
 
+    <!-- Tipe -->
+    <li>
+      <a data-toggle="collapse" data-parent="#menu" href="#tipe" class="menu">
+        <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+        Tipe
+      </a>
+    </li>
+
+      <!-- .nav-child -->
+      <ul class="nav nav-stacked nav-child collapse in" id="tipe">                
+        {% if page.uri == 'boolean' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="{{ site.baseurl }}/tipe/boolean">
+            <span class="glyphicon glyphicon-ok"></span> Boolean
+          </a>
+        </li>
+
+      </ul>
+      <!-- /.nav-child -->
+    <!-- /tipe -->
+
   </ul>
   <!-- /.nav-parent -->
 
