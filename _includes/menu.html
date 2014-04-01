@@ -36,6 +36,26 @@
       </ul>
       <!-- /.nav-child -->
     <!-- /pengenalan -->
+    
+    <!-- syntax dasar -->
+    <li>
+      <a data-toggle="collapse" data-parent="#menu" href="#syntax-dasar" class="menu">
+        <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+        Syntax Dasar
+      </a>
+    </li>
+
+      <!-- .nav-child -->
+      <ul class="nav nav-stacked nav-child collapse in" id="syntax-dasar">                
+        {% if page.uri == 'tag-php' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="{{ site.baseurl }}/syntax-dasar/tag-php">
+            <span class="glyphicon glyphicon-ok"></span> Tag PHP
+          </a>
+        </li>
 
   </ul>
   <!-- /.nav-parent -->
