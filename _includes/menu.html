@@ -33,6 +33,7 @@
             <span class="glyphicon glyphicon-ok"></span> Fitur PHP
           </a>
         </li>
+
       </ul>
       <!-- /.nav-child -->
     <!-- /pengenalan -->
@@ -54,6 +55,16 @@
         {% endif %}
           <a href="{{ site.baseurl }}/syntax-dasar/tag-php">
             <span class="glyphicon glyphicon-ok"></span> Tag PHP
+          </a>
+        </li>
+
+        {% if page.uri == 'php-dan-html' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="{{ site.baseurl }}/syntax-dasar/php-dan-html">
+            <span class="glyphicon glyphicon-ok"></span> PHP & HTML
           </a>
         </li>
 
