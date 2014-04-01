@@ -1,0 +1,8 @@
+name: Your New Jekyll Site
+markdown: redcarpet
+pygments: true
+timezone: Asia/Jakarta
+host: 0.0.0.0
+port: 4040
+baseurl: /phpid
+url: http://localhost:4040
