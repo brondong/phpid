@@ -1,0 +1,68 @@
+---
+layout: master
+title: PHP & HTML - PHP Docs Indonesia
+keywords: php, php docs, dokumentasi php, php indonesia, php dan html, php and html
+description: Penyisipan PHP dalam HTML
+uri: php-dan-html
+---
+
+<!-- konten -->
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8" id="konten">
+
+  <!-- .panel -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">PHP & HTML</h3>
+    </div>
+    
+    <!-- .panel-body -->
+    <div class="panel-body">
+      <p>Seperti yang sudah dijelaskan sebelumnya, PHP juga dapat disisipkan ke dokumen HTML. Agar lebih jelas perhatikan contoh berikut :</p>
+
+{% highlight html+php %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PHP Indonesia</title>
+  </head>
+  <body>
+    <p>Ini merupakan teks dari HTML.</p>
+    <?php echo 'Ini merupakan teks dari PHP.'; ?>
+    <p>Ini merupakan teks dari HTML.</p>
+  </body>
+</html>
+{% endhighlight %}
+
+      <p>PHP juga dapat menyisipkan <em>conditional statement</em> ke dalam HTML. Contoh :</p>
+
+{% highlight html+php %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PHP Indonesia</title>
+  </head>
+  <body>
+    <?php if ($cuaca == 'cerah') : ?>
+      <p>Cuaca cerah!</p>
+    <?php else : ?>
+      <p>Cuaca hujan!</p>
+    <?php endif; ?>
+  </body>
+</html>
+{% endhighlight %}
+
+      <!-- .pager -->
+      <ul class="pager">
+        <li class="previous"><a href="{{ site.baseurl }}/syntax-dasar/tag-php">&larr; Tag PHP</a></li>
+        <li class="next"><a href="{{ site.baseurl }}/syntax-dasar/komentar-php">Komentar PHP &rarr;</a></li>
+      </ul>
+      <!-- /.pager -->
+
+    </div>
+    <!-- /.panel-body -->
+  </div>
+  <!-- /.panel -->
+
+
+</div>
+<!-- /konten -->
