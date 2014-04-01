@@ -1,0 +1,72 @@
+---
+layout: master
+title: Komentar PHP - PHP Docs Indonesia
+keywords: php, php docs, dokumentasi php, php indonesia, komentar php, php comment
+description: Mengenal komentar pada pemrograman PHP
+uri: komentar-php
+---
+
+<!-- konten -->
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8" id="konten">
+
+  <!-- .panel -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Komentar PHP</h3>
+    </div>
+    
+    <!-- .panel-body -->
+    <div class="panel-body">
+      <p>PHP mendukung beberapa "gaya" komentar diantaranya : <code>C</code>, <code>C++</code>, <code>Unix Shell</code> & <code>Perl</code>. Agar lebih jelas, silahkan lihat contoh di bawah ini :</p>
+
+{% highlight php %}
+<?php
+  // komentar satu baris c++
+
+  /**
+   * ini komentar
+   * lebih dari satu baris
+   */
+
+  # ini komentar unix shell satu baris
+?> 
+{% endhighlight %}
+
+      <blockquote>
+        <p>Gunakan komentar untuk kode spesifik untuk mempermudah maintenance!</p>
+      </blockquote>
+
+      <p>Komentar tidak akan dieksekusi oleh PHP, komentar dapat berguna untuk mengingat fungsi-fungsi kode tertentu. Contoh penggabungan komentar dengan kode PHP :</p>
+
+{% highlight php %}
+<?php
+  // tampilkan Halo dunia!
+  echo 'Halo dunia!'; 
+
+  /**
+   * tampilkan 
+   * Halo dunia yang ke dua!
+   */
+  echo 'Halo dunia yang ke dua!'; 
+
+  # tampilkan Halo dunia yang ke tiga!
+  echo 'Halo dunia yang ke tiga!';
+?>
+
+<?php // echo 'tidak menampilkan apapun'; ?>
+{% endhighlight %}
+
+      <!-- .pager -->
+      <ul class="pager">
+        <li class="previous"><a href="{{ site.baseurl }}/syntax-dasar/php-dan-html">&larr; PHP & HTML</a></li>
+        <!-- <li class="next"><a href="php-dan-html.html">PHP & HTML &rarr;</a></li> -->
+      </ul>
+      <!-- /.pager -->
+
+    </div>
+    <!-- /.panel-body -->
+  </div>
+  <!-- /.panel -->
+
+</div>
+<!-- /konten -->
