@@ -1,0 +1,97 @@
+---
+layout: master
+title: Tag PHP - PHP Docs Indonesia
+keywords: php, php docs, dokumentasi php, php indonesia, tag php, php tags
+description: Mengenal tag-tag pemrograman PHP
+uri: tag-php
+---
+
+<!-- konten -->
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8" id="konten">
+
+  <!-- .panel -->
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Tag PHP</h3>
+    </div>
+    
+    <!-- .panel-body -->
+    <div class="panel-body">
+      <p>Untuk pendeklarasian dokumen PHP, anda harus menyimpan file PHP dengan ekstensi <code>.php</code>, adapun kode yang akan di eksekusi oleh PHP yaitu kode yang berada di antara kode <code>&lt;?php</code> dan kode <code>?&gt;</code>.</p>
+
+      <p>Perhatikan contoh berikut ini :</p>
+
+{% highlight php %}
+<?php
+
+  // kode php disini
+
+?>
+{% endhighlight %}
+
+      <p>Selain dengan tag di atas, anda juga dapat mendeklarasikan php dengan menggunakan tag berikut ini :</p>
+
+{% highlight html+php %}
+<script language="php">
+ 
+  // kode php disini
+ 
+</script>
+{% endhighlight %}
+
+      <p>PHP juga mendukung tag pembuka pendek dengan syarat pengaturan <code>short_open_tag</code> pada <code>php.ini</code> sudah enable. Contoh :</p>
+
+{% highlight php %}
+<?
+
+  // kode php disini
+
+?>
+{% endhighlight %}
+
+      <blockquote>
+        <p>Direkomendasikan setiap coding PHP jangan menggunakan tag pembuka pendek!</p>
+      </blockquote>
+
+      <p>PHP membutuhkan webserver agar bisa berjalan, jika anda belum menginstall web server di komputer anda silahkan install terlebih dahulu.</p>
+
+      <p>Di bawah ini adalah contoh menampilkan kata <code>Halo Dunia!</code> menggunakan PHP dengan berbagai tag :</p>
+
+{% highlight html+php %}
+<!-- umum & direkomendasikan -->
+<?php echo 'Halo Dunia!'; ?>
+
+<!-- tag di atas jika menggunakan tag pendek : -->
+<?= 'Halo Dunia!'; ?>
+
+<!-- script -->
+<script language="php">
+  echo 'Halo Dunia!';
+</script>
+{% endhighlight %}
+
+      <p>Jika file yang anda buat adalah murni file PHP (tanpa HTML atau lainnya), disarankan untuk tidak menggunakan tag penutup. Contoh di bawah ini akan menampilkan <code>Halo Dunia! PHP Keren!</code> tanpa menggunakan tag penutup :</p>
+
+{% highlight html+php %}
+<?php
+
+  echo 'Halo Dunia! ';
+
+  echo 'PHP Keren!';
+{% endhighlight %}
+
+      <!-- .pager -->
+      <ul class="pager">
+        <li class="previous"><a href="fitur-php.html">&larr; Fitur PHP</a></li>
+        <li class="next"><a href="php-dan-html.html">PHP & HTML &rarr;</a></li>
+      </ul>
+      <!-- /.pager -->
+
+    </div>
+    <!-- /.panel-body -->
+  </div>
+  <!-- /.panel -->
+
+
+</div>
+<!-- /konten -->
