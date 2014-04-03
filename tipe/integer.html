@@ -1,0 +1,223 @@
+---
+layout: master
+title: Integer - PHP Docs Indonesia
+keywords: php, php docs, dokumentasi php, php indonesia, integer
+description: Mengenal tipe data integer pada pemrograman PHP
+uri: integer
+---
+
+<!-- konten -->
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8" id="konten">
+
+  <!-- .panel -->
+  <div class="panel panel-primary">
+    
+    <!-- .panel-heading -->
+    <div class="panel-heading">
+      <h3 class="panel-title">Integer</h3>
+    </div>
+    <!-- /.panel-heading -->
+
+    <!-- .panel-body -->
+    <div class="panel-body">
+      
+      <p>Tipe integer merupakan kumpulan nomor : <code>{..., -2, -1, 0, 1, 2, ...}</code>.</p>
+
+      <p>Integer dapat ditentukan dalam notasi <code>desimal</code> (basis 10), <code>heksadesimal</code> (basis 16), <code>oktal</code> (basis 8) atau <code>biner</code> (basis 2), bisa juga diawali dengan tanda <code>-</code> atau <code>+</code>.</p>
+
+      <p>Integer tersedia sejak PHP versi <code>5.4.0</code>.</p>
+
+      <p>Untuk membuat notasi <code>oktal</code>, awali dengan angka <code>0</code> (nol), untuk membuat notasi <code>heksadesimal</code>, awali dengan <code>0x</code>, sedangkan untuk membuat notasi <code>biner</code>, awali dengan <code>0b</code>.</p>
+
+      <p>Umumnya, struktur integer adalah seperti berikut :</p>
+
+<pre>
+desimal       : [1-9][0-9]*
+              | 0
+
+heksadesimal  : 0[xX][0-9a-fA-F]+
+
+oktal         : 0[0-7]+
+
+biner         : 0b[01]+
+
+integer       : [+-]?desimal
+              | [+-]?heksadecimal
+              | [+-]?oktal
+              | [+-]?biner
+</pre>
+
+      <p>Ukuran besarnya nilai maksimum integer tergantung pada <code>platform</code> yang digunakan. Untuk platform <code>32 bit</code> biasanya nilai maksimum integer adalah <code>dua miliar</code>, sedangkan untuk platform <code>64 bit</code> biasanya nilai maksimum integer adalah <code>9E18</code>.</p>
+
+      <blockquote>
+        <p>PHP <code>tidak</code> mendukung <code>unsigned</code> integer.</p>
+      </blockquote>
+
+      <p>Sejak PHP versi <code>4.4.0</code> dan <code>5.0.5</code> kita dapat menentukan <code>ukuran</code> integer menggunakan konstanta <code>PHP_INT_SIZE</code> dan nilai <code>maksimum</code> integer menggunakan konstanta <code>PHP_INT_MAX</code>.</p>
+
+      <blockquote>
+        <p>Jika nilai yang diberikan tidak termasuk <code>oktal</code>, maka nilai selanjutnya diabaikan.</p>
+      </blockquote>
+
+      <p>Contoh nilai yang diberikan tidak termasuk <code>oktal</code> :</p>
+
+{% highlight php %}
+<?php
+  $a = 01090;   // 9 tidak termasuk oktal
+
+  var_dump($a); // 010 oktal = 8 desimal
+?>
+{% endhighlight %}
+
+      <p>Jika nilai integer yang diberikan <code>melebihi batas</code> maka secara otomatis akan <code>dikonversi</code> ke tipe yang lebih besar.</p>
+
+      <p>Contoh pada platform <code>32 bit</code> :</p>
+
+{% highlight php %}
+<?php
+$a = 2147483647;
+
+var_dump($a); // int(2147483647)
+
+$b = 2147483648;
+
+var_dump($b); // float(2147483648)
+?> 
+{% endhighlight %}
+
+      <p>Contoh pada platform <code>64 bit</code> :</p>
+
+{% highlight php %}
+<?php
+$a = 9223372036854775807;
+
+var_dump($a); // int(9223372036854775807)
+
+$b = 9223372036854775808;
+
+var_dump($b); // float(9.2233720368548E+18)
+?> 
+{% endhighlight %}
+
+      <p>Dalam PHP <code>tidak ada</code> operasi <code>pembagian</code> <em>(division)</em> untuk data bertipe integer. Contohnya adalah 1 : 2 = 0,5. Nilai 0,5 (<code>float</code>) tersebut jika dikonversi ke tipe integer akan <code>dibulatkan kebawah</code> yang dalam hal ini akan menjadi <code>0</code>. Agar pembulatan bilangan lebih akurat, gunakan fungsi <code>round()</code>. Contoh :</p>
+
+{% highlight php %}
+<?php
+$bagi = 11 / 3;
+
+var_dump($bagi);          // float(3.6666666666667)
+var_dump( (int) $bagi );  // int(3)
+var_dump( round($bagi) ); // float(4)
+?>
+{% endhighlight %}
+
+      <blockquote>
+        <p>Jika nilai float yang dikonversi <code>>=</code> dari <code>,5</code>, dengan menggunakan fungsi <code>round()</code> maka nilai tersebut akan dibulatkan ke atas.</p>
+      </blockquote>
+
+      <p>Untuk mengkonversi suatu nilai ke tipe integer dapat menggunakan tag casting <code>(int)</code> atau <code>(integer)</code>. Namun, jika operasi, fungsi atau struktur kontrol mengharuskan argumen bertipe integer maka tag casting <code>tidak dibutuhkan</code> karena nilai akan secara <code>otomatis</code> dikonversi ke integer.</p>
+
+      <p>Selain menggunakan tag casting di atas, kita juga bisa mengkonversi suatu nilai menjadi integer dengan menggunakan fungsi <code>intval()</code>.</p>
+
+{% highlight php %}
+<?php
+$bagi = 11 / 3;
+
+var_dump($bagi);           // float(3.6666666666667)
+var_dump( intval($bagi) ); // int(3)
+var_dump( round($bagi) );  // float(4)
+?>
+{% endhighlight %}
+
+      <p>Jangan pernah mengkonversi pecahan yang <code>tidak diketahui</code> ke integer karena kadang menampilkan hasil yang <code>tidak sesuai</code>. Contoh :</p>
+
+{% highlight php %}
+<?php
+$a = ( (0.1 + 0.7) * 10 ); // 8
+
+var_dump( (int) $a );      // int(7)
+?> 
+{% endhighlight %}
+
+      <p>Jika suatu <code>resource</code> dikonversi menjadi integer maka hasilnya akan menjadi <code>nomor unik</code> pada saat runtime PHP.</p>
+
+      <p>Jika mengkonversi boolean ke integer maka <code>TRUE</code> akan menjadi <code>1</code> dan <code>FALSE</code> akan menjadi <code>0</code>, begitupun sebaliknya. Contoh :</p>
+
+{% highlight php %}
+<?php
+$a = true;
+$b = false;
+$c = 1;
+$d = 0;
+
+var_dump( (int)  $a );  // int(1)
+var_dump( (int)  $b );  // int(0) 
+var_dump( (bool) $c );  // bool(true)
+var_dump( (bool) $d );  // bool(false)
+?>
+{% endhighlight %}
+
+      <!-- .hidden-xs .hidden-sm -->
+      <div class="hidden-xs hidden-sm">
+
+        <!-- .pager -->
+        <ul class="pager">
+
+          <li class="previous"><a href="{{ site.baseurl }}/tipe/boolean">&larr; Boolean</a></li>
+
+          <!-- <li class="next"><a href="php-dan-html.html">PHP & HTML &rarr;</a></li> -->
+
+        </ul>
+        <!-- /.pager -->
+
+      </div>
+      <!-- /.hidden-xs /.hidden-sm -->
+
+      <!-- .visible-xs .visible-sm -->
+      <div class="visible-xs visible-sm">
+
+        <!-- /.center-block -->
+        <div class="center-block">
+
+          <!-- .row -->
+          <div class="row">
+
+            <!-- .pager -->
+            <ul class="pager">
+
+              <li><a href="{{ site.baseurl }}/tipe/boolean">&larr; Boolean</a></li>
+
+            </ul>
+            <!-- /.pager -->            
+
+          </div>
+          <!-- /.row -->
+
+          <!-- .row -->
+          <div class="row">
+
+            <!-- .pager -->
+            <ul class="pager">
+
+              <!-- <li><a href="php-dan-html.html">PHP & HTML &rarr;</a></li> -->
+
+            </ul>
+            <!-- /.pager -->            
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.center-block -->
+
+      </div>
+      <!-- /.visible-xs /.visible-sm -->
+
+    </div>
+    <!-- /.panel-body -->
+
+  </div>
+  <!-- /.panel -->
+
+</div>
+<!-- /konten -->
