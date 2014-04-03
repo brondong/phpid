@@ -49,9 +49,10 @@
   text-align: justify;
 }
 pre {
-    overflow-x: auto;
+  overflow-x: auto;
+  background: #fcfcfc;
 }
 pre code {
-    overflow-wrap: normal;
-    white-space: pre;
+  overflow-wrap: normal;
+  white-space: pre;
 }
