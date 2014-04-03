@@ -1,0 +1,165 @@
+---
+layout: master
+title: Float - PHP Docs Indonesia
+keywords: php, php docs, dokumentasi php, php indonesia, float
+description: Mengenal tipe data float pada pemrograman PHP
+uri: float
+---
+
+<!-- konten -->
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-8" id="konten">
+
+  <!-- .panel -->
+  <div class="panel panel-primary">
+    
+    <!-- .panel-heading -->
+    <div class="panel-heading">
+      <h3 class="panel-title">Float</h3>
+    </div>
+    <!-- /.panel-heading -->
+
+    <!-- .panel-body -->
+    <div class="panel-body">
+      
+      <p>Tipe ini sering disebut dengan <code>floats</code>, <code>doubles</code> atau <code>real numbers</code>. Tipe ini dapat ditetapkan dengan syntax berikut :</p>
+
+{% highlight php %}
+<?php
+$a = 1.234; 
+$b = 1.2e3; 
+$c = 7E-10;
+?>
+{% endhighlight %}
+
+      <p>Umumnya, struktur float adalah seperti berikut :</p>
+
+<pre>
+LNUM          [0-9]+
+DNUM          ([0-9]*[\.]{LNUM}) | ({LNUM}[\.][0-9]*)
+EXPONENT_DNUM [+-]?(({LNUM} | {DNUM}) [eE][+-]? {LNUM})
+</pre>
+
+      <p>Sama seperti <a href="{{ site.baseurl }}/tipe/integer">integer</a>, ukuran besarnya nilai maksimum tipe float tergantung pada <code>platform</code> yang digunakan.</p>
+
+      <p>Meskipun tergantung pada sistem, umumnya PHP menggunakan format <code>double precision</code>.</p>
+
+      <p>Untuk mengkonversi tipe lain ke tipe float terlebih dahulu harus dikonversi ke tipe <a href="{{ site.baseurl }}/tipe/integer">integer</a>.</p>
+
+      <p>Untuk menguji <code>persamaan</code> nilai yang bertipe float, tidak bisa dibandingkan dengan operator equal (<code>==</code>) melainkan dengan teknik <code>epsilon</code>.</p>
+
+      <p>Contoh yang <code>salah</code> :</p>
+
+{% highlight php %}
+<?php
+$a = 0.2;     // 0.2
+$b = 1 - 0.8; // 0.2
+
+if ($a == $b)
+ echo 'Sama!';
+else
+ echo 'Beda!';
+
+// output : Beda!
+?>
+{% endhighlight %}
+
+      <p>Contoh yang <code>benar</code> :</p>
+
+{% highlight php %}
+<?php
+$a       = 0.2;     // 0.2
+$b       = 1 - 0.8; // 0.2
+$epsilon = 0.00001; // epsilon
+
+if ( abs($a - $b) < $epsilon )
+ echo 'Sama!';
+else
+ echo 'Beda!';
+
+// output : Sama!
+?>
+{% endhighlight %}
+
+      <blockquote>
+        <p>Nilai epsilon merupakan nilai perbedaan <code>terendah</code> yang dapat diterima.</p>
+      </blockquote>
+
+      <p>Dalam operasi numerik dapat menghasilkan nilai dari konstanta <code>NAN</code> (Not a Number). Untuk menghindari hal ini, gunakan fungsi <code>is_nan()</code> untuk mengecek data tersebut berupa numerik atau bukan. Contoh :</p>
+
+{% highlight php %}
+<?php
+$a = acos(8);
+
+var_dump($a);           // float(NAN)
+var_dump( is_nan($a) ); // bool(true)
+?>
+{% endhighlight %}
+
+      <blockquote>
+        <p>Fungsi <code>is_nan()</code> akan mengembalikan <code>true</code> jika nilai bukan numerik, sebaliknya akan mengembalikan <code>false</code>.</p>
+      </blockquote>
+
+      <!-- .hidden-xs .hidden-sm -->
+      <div class="hidden-xs hidden-sm">
+
+        <!-- .pager -->
+        <ul class="pager">
+
+          <li class="previous"><a href="{{ site.baseurl }}/tipe/integer">&larr; Integer</a></li>
+
+          <!-- <li class="next"><a href="{{ site.baseurl }}/tipe/float">Float &rarr;</a></li> -->
+
+        </ul>
+        <!-- /.pager -->
+
+      </div>
+      <!-- /.hidden-xs /.hidden-sm -->
+
+      <!-- .visible-xs .visible-sm -->
+      <div class="visible-xs visible-sm">
+
+        <!-- /.center-block -->
+        <div class="center-block">
+
+          <!-- .row -->
+          <div class="row">
+
+            <!-- .pager -->
+            <ul class="pager">
+
+              <li><a href="{{ site.baseurl }}/tipe/integer">&larr; Integer</a></li>
+
+            </ul>
+            <!-- /.pager -->            
+
+          </div>
+          <!-- /.row -->
+
+          <!-- .row -->
+          <div class="row">
+
+            <!-- .pager -->
+            <ul class="pager">
+
+              <!-- <li><a href="{{ site.baseurl }}/tipe/float">Float &rarr;</a></li> -->
+
+            </ul>
+            <!-- /.pager -->            
+
+          </div>
+          <!-- /.row -->
+
+        </div>
+        <!-- /.center-block -->
+
+      </div>
+      <!-- /.visible-xs /.visible-sm -->
+
+    </div>
+    <!-- /.panel-body -->
+
+  </div>
+  <!-- /.panel -->
+
+</div>
+<!-- /konten -->
