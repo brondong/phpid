@@ -102,6 +102,16 @@
           </a>
         </li>
 
+         {% if page.uri == 'integer' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="{{ site.baseurl }}/tipe/integer">
+            <span class="glyphicon glyphicon-ok"></span> Integer
+          </a>
+        </li>
+
       </ul>
       <!-- /.nav-child -->
     <!-- /tipe -->
